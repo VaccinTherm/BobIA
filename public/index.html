@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaccinTherm | Dúvidas</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="./assets/logistica.png">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="containerGeral">
+        <div class="sideBar">
+            <div class="logoVaccin">
+                <img src="../assets/logo.svg">
+            </div>
+            <div class="veiculos">
+                <div class="containerTitulo">
+                    <img src="../assets/veiculos.svg"> &nbsp;&nbsp;&nbsp;
+                    <p class="tituloSideBar">Veículos</p>
+                </div>
+            </div>
+            <div class="equipe">
+                <div class="containerTitulo">
+                    <img src="../assets/equipe.svg"> &nbsp;&nbsp;&nbsp;
+                    <p class="tituloSideBar">Equipe</p>
+                </div>
+            </div>
+            <div class="historico">
+                <div class="containerTitulo">
+                    <img src="../assets/historico.svg"> &nbsp;&nbsp;&nbsp;
+                    <p class="tituloSideBar">Histórico</p>
+                </div>
+            </div>
+            <div class="duvidas">
+                <div class="containerTitulo">
+                    <img src="../assets/duvidas.svg"> &nbsp;&nbsp;&nbsp;
+                    <p class="tituloSideBar">Dúvidas</p>
+                </div>
+            </div>
+    </div>
+    <div class="containerDois">
+        <div class="nomeUsuario">
+            <p class="saudacao">Olá, Rayane</p>
+            <p class="miniTexto">Lorem ipsum dolor sit amet consectetur!</p>
+        </div>
+        <div class="duvida">
+            <p class="tituloDuvida">Dúvidas</p>
+            <br>
+            <p class="textoDuvida">
+                A Tela de Dúvidas é uma ferramenta inovadora integrada ao nosso sistema, projetada para fornecer suporte instantâneo 
+                e respostas precisas às perguntas dos usuários, especialmente sobre dúvidas técnicas. Utilizando tecnologia de Inteligência Artificial (IA), 
+                a Tela de Dúvidas analisa e responde em tempo real, compreendendo o contexto das perguntas graças a algoritmos de processamento e uma vasta base de conhecimento. 
+                A IA aprende com cada interação, melhorando continuamente sua precisão. 
+                Disponível 24 horas por dia, a Tela de Dúvidas oferece suporte 
+                contínuo, eficiente e confiável, eliminando a necessidade de aguardar suporte humano. Experimente a Tela de Dúvidas e veja como ela pode transformar sua experiência, 
+                tornando-a mais prática e satisfatória.
+            </p>
+            <br><br><br><br>
+            <div class="containerInput">
+                <input id="pergunta" placeholder="Digite sua pergunta" class="inputDuvida">
+                <img src="../assets/imgEnviar.svg" class="botaoEnviar" onclick="gerarResposta()">
+            </div>
+        </div>
+
+        <p class="tituloDuvida">Resposta da IA:</p>
+        <br><br>
+        <div id="resposta">
+        </div>
+
+    </div>
+
+    <script>
+        
+        async function gerarResposta() {
+            const pergunta = document.getElementById('pergunta').value;
+
+            const response = await fetch('/perguntar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ pergunta })
+            });
+
+            const data = await response.json();
+
+            resposta.style.display = 'block';
+            document.getElementById('resposta').innerText = data.resultado;
+        }
+
+    </script>
+    
+</body>
+</html>
