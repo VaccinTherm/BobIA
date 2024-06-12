@@ -138,6 +138,10 @@ body {
   margin-bottom: 20px;
 }
 
+.botaoEnviar {
+  margin-left: 2px;
+}
+
 .botaoEnviar:hover {
   cursor: pointer;
 }
