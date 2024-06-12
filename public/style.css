@@ -52,71 +52,9 @@ body {
   cursor: pointer;
 }
 
-.veiculos {
-  width: 319px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #3c5b5f;
-}
-
-.veiculos:hover {
-  background-color: #7fa9c7;
-  transition: all 0.4s;
-  color: #fff;
-  cursor: pointer;
-}
-
-.equipe {
-  width: 319px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #3c5b5f;
-}
-
-.equipe:hover {
-  background-color: #7fa9c7;
-  transition: all 0.4s;
-  color: #fff;
-  cursor: pointer;
-}
-
-.historico {
-  width: 319px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #3c5b5f;
-}
-
-.historico:hover {
-  background-color: #7fa9c7;
-  transition: all 0.4s;
-  color: #fff;
-  cursor: pointer;
-}
-
-.duvidas {
-  width: 319px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #7fa9c7;
-  color: #ffffff;
-}
-
-.duvidas:hover {
-  cursor: pointer;
-}
-
 .containerGeral {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .containerDois {
@@ -131,7 +69,7 @@ body {
 .nomeUsuario {
   width: 550px;
   height: 100px;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-left: 30px;
 }
 
@@ -175,7 +113,7 @@ body {
 }
 
 .textoDuvida {
-    text-align: justify;
+  text-align: justify;
   font-size: 18px;
   color: #3c5b5f;
   margin-left: 40px;
@@ -197,8 +135,46 @@ body {
 .containerInput {
   height: 45px;
   display: flex;
+  margin-bottom: 20px;
 }
 
 .botaoEnviar:hover {
   cursor: pointer;
+}
+
+.cabecalho {
+  position: absolute;
+  width: 1378px;
+  height: 60px;
+  left: -12px;
+  top: -12px;
+  background: #7FA9C7;
+  display: flex;
+  padding-left: 30px;
+}
+
+.home {
+  width: 28px;
+  height: 28px;
+  margin-right: 20px;
+  opacity: 70%;
+  margin-top: 1.7%;
+}
+
+.usuarios {
+  position: absolute;
+  left: 6.15%;
+  top: 47.08%;
+}
+
+.veiculos {
+  position: absolute;
+  left: 10.50%;
+  top: 42.08%;
+}
+
+.logo {
+  position: absolute;
+  left: 80.16%;
+  top: 33.78%;
 }
