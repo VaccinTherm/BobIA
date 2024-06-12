@@ -23,8 +23,8 @@
           </div>
     <div class="containerDois">
         <div class="nomeUsuario">
-            <p class="saudacao">Olá, Rayane</p>
-            <p class="miniTexto">Lorem ipsum dolor sit amet consectetur!</p>
+            <p class="saudacao">Olá, <span id="b_usuario">Usuario</span></p>
+            <p class="miniTexto">Essa é a nossa ferramenta para dúvidas técnicas</p>
         </div>
         <div class="duvida">
             <p class="tituloDuvida">Dúvidas</p>
@@ -47,12 +47,13 @@
 
         <p class="tituloDuvida">Resposta da IA:</p>
         <br><br>
-        <div id="resposta">
+        <div id="resposta" class="respostaIA">
         </div>
 
     </div>
 
     <script>
+        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         
         async function gerarResposta() {
             const pergunta = document.getElementById('pergunta').value;
